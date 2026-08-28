@@ -20,6 +20,7 @@ public class cellHopping : MonoBehaviour
     public void MovePlayer(int diceresult)
     {
         playerDisplacement[playersTurn] += diceresult;
+        playerDisplacement[playersTurn] %= cells.Length;
         player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
         EndTurn();
     }
