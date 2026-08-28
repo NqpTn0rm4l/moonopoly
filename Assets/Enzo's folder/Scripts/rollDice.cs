@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class rollDice : MonoBehaviour
 {
-    [SerializeField] private int diceResult;
+    [SerializeField] private int[] diceResult;
+    [SerializeField] private GameObject[] diceVisual;
     [SerializeField] private cellHopping cellHoppingScript;
 
     public void RollDice()
