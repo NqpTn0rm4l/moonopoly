@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class cellHopping : MonoBehaviour
 {
+    [SerializeField] private GameObject purchaseUI;
     [SerializeField] private GameObject board;
     [SerializeField] private GameObject[] cells;
     [SerializeField] private GameObject[] player;
@@ -22,7 +23,13 @@ public class cellHopping : MonoBehaviour
         playerDisplacement[playersTurn] += diceresult;
         playerDisplacement[playersTurn] %= cells.Length;
         player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
-        EndTurn();
+
+        bool checkIfOwned = cells[playerDisplacement].GetComponent<propertyState>;
+        if (checkIfOwned.owned == false)
+        {
+
+
+        }
     }
     public void EndTurn()
     {
