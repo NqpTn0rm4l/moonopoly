@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Nachoz/Scenes/StartGame.unity
+    guid: a76ce9fbf09ef584f8239f779daebd84
+  - enabled: 1
+    path: Assets/Nachoz/Scenes/Dup 2.unity
+    guid: 55dbc0d4147b94c4e92ea56fba335c19
+  - enabled: 1
+    path: Assets/Nachoz/Scenes/Credit.unity
+    guid: 3e64639d529661f44b6ab2813554d83e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

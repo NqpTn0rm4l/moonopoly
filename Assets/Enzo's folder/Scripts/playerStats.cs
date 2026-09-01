@@ -1,3 +1,4 @@
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class playerStats : MonoBehaviour
@@ -8,5 +9,10 @@ public class playerStats : MonoBehaviour
     private void Update()
     {
         cashMonitor.GetComponent<TMPro.TextMeshProUGUI>().text = "$" + money.ToString();
+    }
+
+    public void AddMoney(int amount)
+    {
+        money += amount;
     }
 }

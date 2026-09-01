@@ -16,8 +16,8 @@ public class rollDice : MonoBehaviour
         diceResult[1] = Random.Range(1, 6);
         for (int i = 0; i < 6; i++)
         {
-            diceVisual[0].transform.GetChild(i).gameObject.SetActive(i == diceResult[0]);
-            diceVisual[1].transform.GetChild(i).gameObject.SetActive(i == diceResult[1]);
+            diceVisual[0].transform.GetChild(i).gameObject.SetActive(i == diceResult[0] - 1);
+            diceVisual[1].transform.GetChild(i).gameObject.SetActive(i == diceResult[1] - 1);
         }
         int totalRollSum = diceResult[0] + diceResult[1];
         cellHoppingScript.MovePlayer(totalRollSum);
