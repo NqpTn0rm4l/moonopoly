@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class cellHopping : MonoBehaviour
 {
+    [SerializeField] private GameObject purchaseUI;
     [SerializeField] private GameObject board;
     [SerializeField] private GameObject[] cells;
     [SerializeField] private GameObject[] player;
     [SerializeField] private int playersTurn;
     [SerializeField] private int[] playerDisplacement;
+    [SerializeField] private purchasePropertyButton purchaseProperty;
 
     //New
     [SerializeField] private int goMoney = 200;
@@ -39,7 +41,17 @@ public class cellHopping : MonoBehaviour
         playerDisplacement[playersTurn] += diceresult;
         playerDisplacement[playersTurn] %= cells.Length;
         player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
-        EndTurn();
+
+        propertyState currentproperty = cells[playerDisplacement[playersTurn]].GetComponent<propertyState>();
+        if ( currentproperty != null)
+        {
+            Debug.Log("Checking If Property");
+            if ( currentproperty.owned == false)
+            {
+                Debug.Log("Cecking If Property Is Owned");
+                purchaseProperty.ShowProperty(currentproperty);
+            }
+        }
     }
     public void EndTurn()
     {

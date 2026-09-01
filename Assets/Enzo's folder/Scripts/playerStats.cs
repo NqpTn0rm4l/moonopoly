@@ -1,18 +1,24 @@
-using UnityEditor.UIElements;
 using UnityEngine;
 
 public class playerStats : MonoBehaviour
 {
-    [SerializeField] private int money = 30000;
+    [SerializeField] private int money;
     [SerializeField] private GameObject cashMonitor;
-
+    
     private void Update()
     {
         cashMonitor.GetComponent<TMPro.TextMeshProUGUI>().text = "$" + money.ToString();
     }
-
-    public void AddMoney(int amount)
+    public bool SubtractPropertyPriceFromPlayerAmount(int propertyPrice)
     {
-        money += amount;
+        Debug.Log("Checking If Money Is Enough");
+        if ( money > propertyPrice)
+        {
+            Debug.Log("Money Is Enough");
+            money -= propertyPrice;
+            return true;
+        }
+        Debug.Log("Money Is Not Enough");
+        return false;
     }
 }
