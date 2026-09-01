@@ -9,6 +9,12 @@ public class playerStats : MonoBehaviour
     {
         cashMonitor.GetComponent<TMPro.TextMeshProUGUI>().text = "$" + money.ToString();
     }
+
+    private void AddMoney(int amount)
+    {
+        money += amount;
+    }
+
     public bool SubtractPropertyPriceFromPlayerAmount(int propertyPrice)
     {
         Debug.Log("Checking If Money Is Enough");
