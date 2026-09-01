@@ -8,6 +8,7 @@ public class cellHopping : MonoBehaviour
     [SerializeField] private GameObject[] player;
     [SerializeField] private int playersTurn;
     [SerializeField] private int[] playerDisplacement;
+    [SerializeField] private purchasePropertyButton purchaseProperty;
 
     private void Start()
     {
@@ -24,11 +25,15 @@ public class cellHopping : MonoBehaviour
         playerDisplacement[playersTurn] %= cells.Length;
         player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
 
-        bool checkIfOwned = cells[playerDisplacement].GetComponent<propertyState>;
-        if (checkIfOwned.owned == false)
+        propertyState currentproperty = cells[playerDisplacement[playersTurn]].GetComponent<propertyState>();
+        if ( currentproperty != null)
         {
-
-
+            Debug.Log("Checking If Property");
+            if ( currentproperty.owned == false)
+            {
+                Debug.Log("Cecking If Property Is Owned");
+                purchaseProperty.ShowProperty(currentproperty);
+            }
         }
     }
     public void EndTurn()
