@@ -10,7 +10,7 @@ public class playerStats : MonoBehaviour
         cashMonitor.GetComponent<TMPro.TextMeshProUGUI>().text = "$" + money.ToString();
     }
 
-    private void AddMoney(int amount)
+    public void AddMoney(int amount)
     {
         money += amount;
     }

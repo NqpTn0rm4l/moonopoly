@@ -11,8 +11,23 @@ public class cellHopping : MonoBehaviour
     [SerializeField] private int[] playerDisplacement;
     [SerializeField] private purchasePropertyButton purchaseProperty;
 
+    [SerializeField]
+    private AnimationCurve curve;
+
+    private Vector3 playerEnd;
+    private Vector3 playerStart = new Vector3 (0, 0,0);
+    private float desiredDurtion = 3f;
+    private float elapsedTime;
+
+    private int movingPlayer;
+
     //New
     [SerializeField] private int goMoney = 200;
+
+    [SerializeField]
+    private float hopDuration = 0.25f;
+
+    private bool isMoving = false;
 
     private void Start()
     {
@@ -24,7 +39,13 @@ public class cellHopping : MonoBehaviour
         }
 
         playerDisplacement = new int[player.Length];
+
+        for (int i = 0; i < player.Length; i++)
+        {
+            player[i].transform.position = cells[0].transform.position;
+        }
     }
+
     public void MovePlayer(int diceresult)
     {
         int oldPosition = playerDisplacement[playersTurn];
@@ -40,7 +61,16 @@ public class cellHopping : MonoBehaviour
 
         playerDisplacement[playersTurn] += diceresult;
         playerDisplacement[playersTurn] %= cells.Length;
-        player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
+
+        movingPlayer = playersTurn;
+
+        playerStart = player[playersTurn].transform.position;
+        playerEnd = cells[playerDisplacement[playersTurn]].transform.position;
+
+        elapsedTime = 0f;
+        desiredDurtion = 0.5f;
+
+        //player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
 
         propertyState currentproperty = cells[playerDisplacement[playersTurn]].GetComponent<propertyState>();
         if ( currentproperty != null)
@@ -53,6 +83,19 @@ public class cellHopping : MonoBehaviour
             }
         }
     }
+
+    private void Update()
+    {
+        if (elapsedTime < desiredDurtion)
+        {
+            elapsedTime += Time.deltaTime;
+
+            float percentageComplete = elapsedTime / desiredDurtion;
+
+            player[movingPlayer].transform.position = Vector3.Lerp(playerStart, playerEnd, curve.Evaluate(percentageComplete));
+        }
+    }
+
     public void EndTurn()
     {
         playersTurn++;
