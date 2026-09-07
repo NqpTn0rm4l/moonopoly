@@ -1,13 +1,25 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class playerStats : MonoBehaviour
 {
     [SerializeField] private int money;
     [SerializeField] private GameObject cashMonitor;
-    
+    [SerializeField] private ownProeprtyUi ownPropertyUiScript;
+    InputAction clickInput;
+
+    private void Awake()
+    {
+        clickInput = InputSystem.actions.FindAction("Click");
+    }
     private void Update()
     {
         cashMonitor.GetComponent<TMPro.TextMeshProUGUI>().text = "$" + money.ToString();
+        if ( clickInput.IsPressed() && ownPropertyUiScript.checkingProperty == true)
+        {
+            ownPropertyUiScript.HideOwnProperty();
+            Debug.Log("Input To Close Own Property Viewing");
+        }
     }
 
     public void AddMoney(int amount)
@@ -23,7 +35,7 @@ public class playerStats : MonoBehaviour
     public bool SubtractPropertyPriceFromPlayerAmount(int propertyPrice)
     {
         Debug.Log("Checking If Money Is Enough");
-        if ( money > propertyPrice)
+        if ( money >= propertyPrice)
         {
             Debug.Log("Money Is Enough");
             money -= propertyPrice;
