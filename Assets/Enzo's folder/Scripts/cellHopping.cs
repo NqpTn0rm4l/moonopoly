@@ -23,6 +23,7 @@ public class cellHopping : MonoBehaviour
 
     //New
     [SerializeField] private int goMoney = 200;
+    [SerializeField] private int taxCell = 150;
 
     [SerializeField]
     private float hopDuration = 0.25f;
@@ -54,6 +55,7 @@ public class cellHopping : MonoBehaviour
         if (newPosition >= 40)
         {
             player[playersTurn].GetComponent<playerStats>().AddMoney(goMoney);
+            player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
 
             Debug.Log("Player " + playersTurn + " passed GO!");
             Debug.Log("Received $" + goMoney);
