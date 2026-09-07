@@ -15,6 +15,11 @@ public class playerStats : MonoBehaviour
         money += amount;
     }
 
+    public void TaxMoney(int amount)
+    {
+        money -= amount;
+    }
+
     public bool SubtractPropertyPriceFromPlayerAmount(int propertyPrice)
     {
         Debug.Log("Checking If Money Is Enough");
