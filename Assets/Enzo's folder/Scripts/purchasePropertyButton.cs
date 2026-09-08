@@ -7,6 +7,7 @@ public class purchasePropertyButton : MonoBehaviour
     [SerializeField] private GameObject propertyUI;
     [SerializeField] private TMP_Text propertyNameUI;
     [SerializeField] private TMP_Text propertyPriceUI;
+    [SerializeField] private ownProeprtyUi ownPropertyUiScript;
 
     private propertyState currentProperty;
     /*public void TurnOnUI()
@@ -33,6 +34,7 @@ public class purchasePropertyButton : MonoBehaviour
         {
             Debug.Log("Purchase Done");
             currentProperty.owned = true;
+            ownPropertyUiScript.OwnedPropertyShowsUpAtRoster(currentProperty);
             propertyUI.SetActive(false);
         }
     }
