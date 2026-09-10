@@ -55,10 +55,10 @@ public class cellHopping : MonoBehaviour
         int oldPosition = playerDisplacement[playersTurn];
 
         int newPosition = oldPosition + diceresult;
-        if (newPosition >= 40)
+        /*if (newPosition >= 40)
         {
-            //player[playersTurn].GetComponent<playerStats>().AddMoney(goMoney);
-            //player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
+            player[playersTurn].GetComponent<playerStats>().AddMoney(goMoney);
+            player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
 
             Debug.Log("Player " + playersTurn + " passed GO!");
             Debug.Log("Received $" + goMoney);
@@ -70,10 +70,10 @@ public class cellHopping : MonoBehaviour
         movingPlayer = playersTurn;
 
         playerStart = player[playersTurn].transform.position;
-        playerEnd = cells[playerDisplacement[playersTurn]].transform.position;
+        playerEnd = cells[playerDisplacement[playersTurn]].transform.position;*/
 
-        elapsedTime = 0f;
-        desiredDurtion = 0.5f;
+        //elapsedTime = 0f;
+        //desiredDurtion = 0.5f;
 
         //player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
 
@@ -94,7 +94,7 @@ public class cellHopping : MonoBehaviour
         }
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (elapsedTime < desiredDurtion)
         {
@@ -104,7 +104,7 @@ public class cellHopping : MonoBehaviour
 
             player[movingPlayer].transform.position = Vector3.Lerp(playerStart, playerEnd, curve.Evaluate(percentageComplete));
         }
-    }
+    }*/
 
     public void EndTurn()
     {

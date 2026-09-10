@@ -119,6 +119,148 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4005625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4005631}
+  - component: {fileID: 4005630}
+  - component: {fileID: 4005629}
+  - component: {fileID: 4005628}
+  - component: {fileID: 4005627}
+  - component: {fileID: 4005626}
+  m_Layer: 0
+  m_Name: Bot player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &4005626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806a156052bd63444b603199949c0e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Botplayerstats
+  money: 1850
+--- !u!114 &4005627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 586d78f3c205fce4ca30b73951308bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Botplayerscript
+  Botplayerstats: {fileID: 4005626}
+  CellHopping: {fileID: 107947070}
+  RollDice: {fileID: 107947072}
+--- !u!65 &4005628
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005625}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &4005629
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005625}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &4005630
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005625}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &4005631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.223, y: 0.062, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 746951822}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &16929932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 957374895546494740, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
@@ -589,9 +731,37 @@ MonoBehaviour:
   cells: []
   player:
   - {fileID: 1826082652667637581}
+  - {fileID: 4005625}
   playersTurn: 0
-  playerDisplacement: 00000000
+  playerDisplacement: 0000000000000000
   purchaseProperty: {fileID: 107947075}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  goMoney: 200
+  taxCell: 150
+  hopDuration: 0.25
 --- !u!4 &107947071
 Transform:
   m_ObjectHideFlags: 0
@@ -670,6 +840,9 @@ MonoBehaviour:
   propertyNameUI: {fileID: 1579900534}
   propertyPriceUI: {fileID: 995500455}
   ownPropertyUiScript: {fileID: 107947076}
+  currentProperty: {fileID: 0}
+  isBot: 0
+  playerID: 0
 --- !u!114 &107947076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,6 +895,7 @@ MonoBehaviour:
   house4: {fileID: 851809581}
   hotel: {fileID: 1891135555}
   sellPrice: {fileID: 46760117}
+  propertyState: {fileID: 0}
 --- !u!1 &111915211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,7 +1299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 9
   purchasePrice: 120
-  rentPrice: 0
+  rentPrice: 10
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
@@ -1488,7 +1662,7 @@ Transform:
   m_GameObject: {fileID: 293953150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.24, y: -0, z: 4.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1578,7 +1752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 20
   purchasePrice: 260
-  rentPrice: 0
+  rentPrice: 32
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
@@ -3354,11 +3528,12 @@ Transform:
   m_GameObject: {fileID: 746951821}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4423, y: -0, z: -4.40251}
+  m_LocalPosition: {x: -0.20230007, y: 0, z: -0.112510204}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1305020057506657783}
+  - {fileID: 4005631}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &750100364
@@ -4118,7 +4293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 13
   purchasePrice: 150
-  rentPrice: 0
+  rentPrice: 15
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0, b: 0, a: 0}
@@ -4570,7 +4745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 6
   purchasePrice: 200
-  rentPrice: 0
+  rentPrice: 50
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
@@ -5202,7 +5377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 19
   purchasePrice: 200
-  rentPrice: 0
+  rentPrice: 28
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
@@ -5698,7 +5873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 12
   purchasePrice: 160
-  rentPrice: 0
+  rentPrice: 16
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
@@ -5721,7 +5896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 17
   purchasePrice: 200
-  rentPrice: 0
+  rentPrice: 28
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
@@ -6142,7 +6317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 14
   purchasePrice: 160
-  rentPrice: 0
+  rentPrice: 16
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
@@ -6653,7 +6828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 22
   purchasePrice: 240
-  rentPrice: 0
+  rentPrice: 38
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
@@ -6676,7 +6851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 4
   purchasePrice: 90
-  rentPrice: 0
+  rentPrice: 6
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.6037736, g: 0.34063908, b: 0, a: 1}
@@ -7264,7 +7439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 15
   purchasePrice: 220
-  rentPrice: 0
+  rentPrice: 20
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
@@ -7461,7 +7636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 10
   purchasePrice: 180
-  rentPrice: 0
+  rentPrice: 12
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
@@ -7552,7 +7727,7 @@ Transform:
   m_GameObject: {fileID: 1774727700}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.85, y: 8.8, z: 0}
+  m_LocalPosition: {x: 5.0899997, y: 8.8, z: 4.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7621,7 +7796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 24
   purchasePrice: 240
-  rentPrice: 0
+  rentPrice: 38
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
@@ -7781,7 +7956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 25
   purchasePrice: 300
-  rentPrice: 0
+  rentPrice: 42
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
@@ -8345,7 +8520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 16
   purchasePrice: 200
-  rentPrice: 0
+  rentPrice: 50
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
@@ -8771,7 +8946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 7
   purchasePrice: 120
-  rentPrice: 0
+  rentPrice: 10
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
@@ -9082,7 +9257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
   propertyName: 2
   purchasePrice: 60
-  rentPrice: 0
+  rentPrice: 4
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.6037736, g: 0.34063908, b: 0, a: 1}
