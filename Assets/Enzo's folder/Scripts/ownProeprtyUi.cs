@@ -6,12 +6,15 @@ public class ownProeprtyUi : MonoBehaviour
     [SerializeField] private GameObject ownPropertyTemplate;
     [SerializeField] private GameObject propertyCard;
     [SerializeField] private GameObject[] UIPositions;
+    [SerializeField] private propertyCardStatsReference propertyCardStatsReference;
     [SerializeField] private int propertyCount = 0;
     public bool checkingProperty = false;
 
+    public propertyState propertyStateImported;
 
     public void OwnedPropertyShowsUpAtRoster(propertyState property)
     {
+        propertyStateImported = property;
         if (propertyCount >= UIPositions.Length)
         {
             Debug.Log("No More Space For Property Cards");
@@ -25,10 +28,12 @@ public class ownProeprtyUi : MonoBehaviour
     }
     public void ViewOwnedProperty()
     {
+
         if (!checkingProperty)
         {
             ownPropertyTemplate.SetActive(true);
             checkingProperty = true;
+            propertyCardStatsReference.SetValues(propertyStateImported);
             Debug.Log("Owned Property Is Being Viewed");
         }
     }

@@ -9,7 +9,7 @@ public class purchasePropertyButton : MonoBehaviour
     [SerializeField] private TMP_Text propertyPriceUI;
     [SerializeField] private ownProeprtyUi ownPropertyUiScript;
 
-    private propertyState currentProperty;
+    public propertyState currentProperty;
     /*public void TurnOnUI()
     {
         propertyNameUI.SetActive(true);
