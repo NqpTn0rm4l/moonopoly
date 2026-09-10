@@ -21,6 +21,17 @@ public class playerStats : MonoBehaviour
             Debug.Log("Input To Close Own Property Viewing");
         }
     }
+
+    public void AddMoney(int amount)
+    {
+        money += amount;
+    }
+
+    public void TaxMoney(int amount)
+    {
+        money -= amount;
+    }
+
     public bool SubtractPropertyPriceFromPlayerAmount(int propertyPrice)
     {
         Debug.Log("Checking If Money Is Enough");
