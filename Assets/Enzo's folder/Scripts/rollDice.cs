@@ -23,6 +23,14 @@ public class rollDice : MonoBehaviour
         }
         int totalRollSum = diceResult[0] + diceResult[1];
         cellHoppingScript.MovePlayer(totalRollSum);
-
+    }
+    public void RollDiceForBot()
+    {
+        diceResult[0] = Random.Range(1, 6);
+        Debug.Log(diceResult[0]);
+        diceResult[1] = Random.Range(1, 6);
+        Debug.Log(diceResult[1]);
+        int totalRollSum = diceResult[0] + diceResult[1];
+        cellHoppingScript.MovePlayer(totalRollSum);
     }
 }

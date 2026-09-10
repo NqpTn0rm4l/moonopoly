@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
@@ -32,6 +33,7 @@ public class cellHopping : MonoBehaviour
 
     private void Start()
     {
+
         cells = new GameObject[board.transform.childCount];
 
         for ( int i = 0; i < board.transform.childCount; i++)
@@ -49,13 +51,14 @@ public class cellHopping : MonoBehaviour
 
     public void MovePlayer(int diceresult)
     {
+        EndTurn();
         int oldPosition = playerDisplacement[playersTurn];
 
         int newPosition = oldPosition + diceresult;
         if (newPosition >= 40)
         {
-            player[playersTurn].GetComponent<playerStats>().AddMoney(goMoney);
-            player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
+            //player[playersTurn].GetComponent<playerStats>().AddMoney(goMoney);
+            //player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
 
             Debug.Log("Player " + playersTurn + " passed GO!");
             Debug.Log("Received $" + goMoney);
@@ -75,13 +78,18 @@ public class cellHopping : MonoBehaviour
         //player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
 
         propertyState currentproperty = cells[playerDisplacement[playersTurn]].GetComponent<propertyState>();
-        if ( currentproperty != null)
+        if (currentproperty != null)
         {
             Debug.Log("Checking If Property");
-            if ( currentproperty.owned == false)
+            if (currentproperty.owned == false)
             {
                 Debug.Log("Cecking If Property Is Owned");
                 purchaseProperty.ShowProperty(currentproperty);
+            }
+            else if (currentproperty.owned == true)
+            {
+                Debug.Log("Paying proeprty rent");
+                player[playersTurn].GetComponent<playerStats>().TaxMoney(currentproperty.rentPrice);
             }
         }
     }
@@ -100,10 +108,20 @@ public class cellHopping : MonoBehaviour
 
     public void EndTurn()
     {
+        Debug.Log("Turns Changed");
         playersTurn++;
         if (playersTurn >= player.Length)
         {
             playersTurn = 0;
+        }
+        BotPlayersTurn();
+    }
+    private void BotPlayersTurn()
+    {
+        Botplayerscript bot = player[playersTurn].GetComponent<Botplayerscript>();
+        if (bot != null)
+        {
+            bot.BotTakesItsTurn();
         }
     }
 }

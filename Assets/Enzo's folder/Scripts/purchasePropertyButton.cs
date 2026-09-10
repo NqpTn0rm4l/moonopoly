@@ -10,6 +10,8 @@ public class purchasePropertyButton : MonoBehaviour
     [SerializeField] private ownProeprtyUi ownPropertyUiScript;
 
     public propertyState currentProperty;
+    public bool isBot;
+    public int playerID;
     /*public void TurnOnUI()
     {
         propertyNameUI.SetActive(true);
