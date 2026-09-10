@@ -55,13 +55,20 @@ public class cellHopping : MonoBehaviour
         if (newPosition >= 40)
         {
             player[playersTurn].GetComponent<playerStats>().AddMoney(goMoney);
-            player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
 
             Debug.Log("Player " + playersTurn + " passed GO!");
             Debug.Log("Received $" + goMoney);
         }
 
-        playerDisplacement[playersTurn] += diceresult;
+        if (newPosition == 39)
+        {
+            player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
+
+            Debug.Log("Player " + playersTurn + " passed Tax!");
+            Debug.Log("Received -$" + goMoney);
+        }
+
+            playerDisplacement[playersTurn] += diceresult;
         playerDisplacement[playersTurn] %= cells.Length;
 
         movingPlayer = playersTurn;
