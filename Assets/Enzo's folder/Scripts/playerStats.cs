@@ -43,6 +43,11 @@ public class playerStats : MonoBehaviour
         money -= amount;
     }
 
+    public void SuperTaxMoney(int amount)
+    {
+        money -= amount;
+    }
+
     public bool BuyPropertyAndSetOwner(propertyState property)
     {
         if (money >= property.purchasePrice)

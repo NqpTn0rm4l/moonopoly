@@ -598,7 +598,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  cellType: {fileID: 0}
   goMoney: 200
   taxCell: 150
   superTax: 250
@@ -712,7 +711,6 @@ MonoBehaviour:
   propertyCardStatsReference: {fileID: 107947077}
   propertyCount: 0
   checkingProperty: 0
-  propertyStateImported: {fileID: 0}
 --- !u!114 &107947077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,7 +732,6 @@ MonoBehaviour:
   house4: {fileID: 851809581}
   hotel: {fileID: 1891135555}
   sellPrice: {fileID: 46760117}
-  propertyState: {fileID: 0}
 --- !u!1 &111915211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,11 +1133,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 9
+  propertyName: EUSTON ROAD
   purchasePrice: 120
-  rentPrice: 0
+  rentPrice: 45
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
 --- !u!1001 &280604254
@@ -1397,11 +1396,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 28
+  propertyName: CONVENTRY STREET
   purchasePrice: 280
-  rentPrice: 0
+  rentPrice: 115
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.9740931, b: 0, a: 1}
 --- !u!1 &293953150
@@ -1599,11 +1600,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 20
+  propertyName: VINE STREET
   purchasePrice: 260
-  rentPrice: 0
+  rentPrice: 100
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
 --- !u!1 &346280418
@@ -2119,6 +2122,8 @@ MonoBehaviour:
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
 --- !u!4 &458416597 stripped
@@ -2212,11 +2217,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 35
+  propertyName: BOND STREET
   purchasePrice: 380
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.63522005, b: 0, a: 1}
 --- !u!1001 &485645876
@@ -3190,11 +3197,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 33
+  propertyName: OXFORD STREET
   purchasePrice: 320
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.63522005, b: 0, a: 1}
 --- !u!1 &690749862
@@ -4179,6 +4188,8 @@ MonoBehaviour:
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &924283885
@@ -4632,6 +4643,8 @@ MonoBehaviour:
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
 --- !u!1001 &1080944270
@@ -5306,11 +5319,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 19
+  propertyName: MARLBOROUGH STREET
   purchasePrice: 200
-  rentPrice: 0
+  rentPrice: 75
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
 --- !u!1 &1223468434
@@ -5568,11 +5583,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 38
+  propertyName: PARK LANE
   purchasePrice: 360
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.2917374, b: 0.41509432, a: 1}
 --- !u!1 &1265544602
@@ -5804,11 +5821,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 12
+  propertyName: PALL MALL
   purchasePrice: 160
-  rentPrice: 0
+  rentPrice: 75
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
 --- !u!1 &1359730777 stripped
@@ -5828,11 +5847,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 17
+  propertyName: BOW STREET
   purchasePrice: 200
-  rentPrice: 0
+  rentPrice: 95
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
 --- !u!1 &1404727547
@@ -6265,11 +6286,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 14
+  propertyName: WHITEHALL
   purchasePrice: 160
-  rentPrice: 0
+  rentPrice: 65
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
 --- !u!4 &1429259081 stripped
@@ -6289,11 +6312,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 27
+  propertyName: LEICESTER SQUARE
   purchasePrice: 280
-  rentPrice: 0
+  rentPrice: 135
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.9740931, b: 0, a: 1}
 --- !u!4 &1431316121 stripped
@@ -6323,6 +6348,8 @@ MonoBehaviour:
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1459102917
@@ -6802,11 +6829,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 22
+  propertyName: STRAND
   purchasePrice: 240
-  rentPrice: 0
+  rentPrice: 100
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1554298626 stripped
@@ -6826,11 +6855,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 4
+  propertyName: WHITECHAPLE ROAD
   purchasePrice: 90
-  rentPrice: 0
+  rentPrice: 35
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.6037736, g: 0.34063908, b: 0, a: 1}
 --- !u!4 &1555444756 stripped
@@ -6992,11 +7023,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 30
+  propertyName: PICCADILLY
   purchasePrice: 340
-  rentPrice: 0
+  rentPrice: 140
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.9740931, b: 0, a: 1}
 --- !u!1 &1601728361
@@ -7332,6 +7365,8 @@ MonoBehaviour:
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
 --- !u!1 &1666041619
@@ -7432,11 +7467,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 15
+  propertyName: NORTHUMRL'D AVENUE
   purchasePrice: 220
-  rentPrice: 0
+  rentPrice: 85
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
 --- !u!1 &1734219412
@@ -7531,11 +7568,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 40
+  propertyName: MAYFAIR
   purchasePrice: 420
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.2917374, b: 0.41509432, a: 1}
 --- !u!1 &1758320205
@@ -7631,11 +7670,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 10
+  propertyName: PENTONVILLE ROAD
   purchasePrice: 180
-  rentPrice: 0
+  rentPrice: 65
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
 --- !u!1 &1774727700
@@ -7792,11 +7833,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 24
+  propertyName: FLEET STREET
   purchasePrice: 240
-  rentPrice: 0
+  rentPrice: 85
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1781304592
@@ -7953,11 +7996,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 25
+  propertyName: TRAFALGAR SQUARE
   purchasePrice: 300
-  rentPrice: 0
+  rentPrice: 115
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1825828509
@@ -8546,6 +8591,8 @@ MonoBehaviour:
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
 --- !u!1001 &2021577014
@@ -8991,11 +9038,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 7
+  propertyName: THE ANGLE, ISLINGTON
   purchasePrice: 120
-  rentPrice: 0
+  rentPrice: 55
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
 --- !u!1 &2046403730
@@ -9223,11 +9272,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 32
+  propertyName: REGENT STREET
   purchasePrice: 320
   rentPrice: 0
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.63522005, b: 0, a: 1}
 --- !u!1001 &2111497437
@@ -9304,11 +9355,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 2
+  propertyName: OLD KENT ROAD
   purchasePrice: 60
-  rentPrice: 0
+  rentPrice: 25
   rentWithColorSet: 0
   owned: 0
+  owner: {fileID: 0}
+  ownerBot: {fileID: 0}
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.6037736, g: 0.34063908, b: 0, a: 1}
 --- !u!4 &1305020057506657783 stripped
