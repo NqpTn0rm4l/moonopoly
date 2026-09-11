@@ -118,7 +118,7 @@ public class cellHopping : MonoBehaviour
     {
         GameObject landedCell = cells[playerDisplacement[movingPlayer]];
 
-        cellType cell = landedCell.GetComponent<cellType>();
+        Specialcards cell = landedCell.GetComponent<Specialcards>();
 
         if (cell == null)
         {

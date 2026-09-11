@@ -14,4 +14,5 @@ public class Specialcards : MonoBehaviour
 {
     public CellType type;
     public int taxAmount;
+    public int giveMoney;
 }

@@ -969,6 +969,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  cellType: {fileID: 0}
   goMoney: 200
   taxCell: 150
   superTax: 250
@@ -1332,6 +1333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Specialcards
   type: 0
   taxAmount: 0
+  giveMoney: 60
 --- !u!1 &230235798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2261,7 +2263,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1263135904}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
 --- !u!1 &358428220 stripped
 GameObject:
@@ -2661,6 +2666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Specialcards
   type: 3
   taxAmount: 250
+  giveMoney: 0
 --- !u!1001 &465109012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2980,7 +2986,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1850233072}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
 --- !u!4 &540992626 stripped
 Transform:
@@ -4402,6 +4411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Specialcards
   type: 0
   taxAmount: 0
+  giveMoney: 60
 --- !u!1001 &990858838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4647,6 +4657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Specialcards
   type: 2
   taxAmount: 150
+  giveMoney: 0
 --- !u!4 &1035701252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 957374895546494740, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
@@ -4666,6 +4677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Specialcards
   type: 0
   taxAmount: 0
+  giveMoney: 60
 --- !u!1001 &1080944270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5078,6 +5090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Specialcards
   type: 5
   taxAmount: 0
+  giveMoney: 0
 --- !u!4 &1195407651 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 957374895546494740, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
@@ -5490,6 +5503,26 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1263135903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 355794601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1263135904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263135903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 5
+  taxAmount: 0
+  giveMoney: 0
 --- !u!1001 &1285849511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7801,6 +7834,26 @@ MonoBehaviour:
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1 &1850233071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 533627271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1850233072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850233071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 6
+  taxAmount: 0
+  giveMoney: 0
 --- !u!4 &1850241035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 957374895546494740, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
@@ -8095,6 +8148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Specialcards
   type: 1
   taxAmount: 0
+  giveMoney: 80
 --- !u!1 &1931298768
 GameObject:
   m_ObjectHideFlags: 0
@@ -8372,16 +8426,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2010284661}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b84f4d9e93541574ab89f2c91bb4fd83, type: 3}
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::propertyState
-  propertyName: 
-  purchasePrice: 0
-  rentPrice: 320
-  rentWithColorSet: 0
-  owned: 0
-  typeOfAssetOnProperty: {fileID: 0}
-  propertyColor: {r: 0, g: 0, b: 0, a: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 0
+  taxAmount: 0
+  giveMoney: 80
 --- !u!1001 &2021577014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8872,6 +8922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Specialcards
   type: 1
   taxAmount: 0
+  giveMoney: 80
 --- !u!1 &2046403730
 GameObject:
   m_ObjectHideFlags: 0
