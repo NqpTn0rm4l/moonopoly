@@ -592,6 +592,17 @@ MonoBehaviour:
   playersTurn: 0
   playerDisplacement: 00000000
   purchaseProperty: {fileID: 107947075}
+  curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  cellType: {fileID: 0}
+  goMoney: 200
+  taxCell: 150
+  superTax: 250
+  hopDuration: 0.25
 --- !u!4 &107947071
 Transform:
   m_ObjectHideFlags: 0
@@ -670,6 +681,7 @@ MonoBehaviour:
   propertyNameUI: {fileID: 1579900534}
   propertyPriceUI: {fileID: 995500455}
   ownPropertyUiScript: {fileID: 107947076}
+  currentProperty: {fileID: 0}
 --- !u!114 &107947076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,6 +734,7 @@ MonoBehaviour:
   house4: {fileID: 851809581}
   hotel: {fileID: 1891135555}
   sellPrice: {fileID: 46760117}
+  propertyState: {fileID: 0}
 --- !u!1 &111915211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1139,7 @@ MonoBehaviour:
   propertyName: 9
   purchasePrice: 120
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
@@ -1184,8 +1198,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1414442936}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+--- !u!1 &280604255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 280604254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &284006695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1400,7 @@ MonoBehaviour:
   propertyName: 28
   purchasePrice: 280
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.9740931, b: 0, a: 1}
@@ -1579,6 +1602,7 @@ MonoBehaviour:
   propertyName: 20
   purchasePrice: 260
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
@@ -2093,6 +2117,7 @@ MonoBehaviour:
   propertyName: 36
   purchasePrice: 200
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
@@ -2190,6 +2215,7 @@ MonoBehaviour:
   propertyName: 35
   purchasePrice: 380
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.63522005, b: 0, a: 1}
@@ -2724,8 +2750,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 554838298}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+--- !u!1 &554838297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 554838296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &554838298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554838297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 0
+  taxAmount: 0
+  giveMoney: 60
 --- !u!1 &584830139
 GameObject:
   m_ObjectHideFlags: 0
@@ -3144,6 +3193,7 @@ MonoBehaviour:
   propertyName: 33
   purchasePrice: 320
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.63522005, b: 0, a: 1}
@@ -3805,8 +3855,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1656375168}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+--- !u!1 &829421289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 829421288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &831669627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 957374895546494740, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
@@ -4119,6 +4177,7 @@ MonoBehaviour:
   propertyName: 13
   purchasePrice: 150
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0, b: 0, a: 0}
@@ -4571,6 +4630,7 @@ MonoBehaviour:
   propertyName: 6
   purchasePrice: 200
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
@@ -4629,8 +4689,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1080944272}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+--- !u!1 &1080944271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 1080944270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1080944272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080944271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 0
+  taxAmount: 0
+  giveMoney: 60
 --- !u!1001 &1082132464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4686,8 +4769,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1082132466}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+--- !u!1 &1082132465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 1082132464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1082132466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082132465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 3
+  taxAmount: 250
+  giveMoney: 0
 --- !u!1 &1098751580
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,6 +5309,7 @@ MonoBehaviour:
   propertyName: 19
   purchasePrice: 200
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
@@ -5464,6 +5571,7 @@ MonoBehaviour:
   propertyName: 38
   purchasePrice: 360
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.2917374, b: 0.41509432, a: 1}
@@ -5699,6 +5807,7 @@ MonoBehaviour:
   propertyName: 12
   purchasePrice: 160
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
@@ -5722,6 +5831,7 @@ MonoBehaviour:
   propertyName: 17
   purchasePrice: 200
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.6700374, b: 0, a: 1}
@@ -6059,6 +6169,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 957374895546494740, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
   m_PrefabInstance: {fileID: 280604254}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1414442936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280604255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 1
+  taxAmount: 0
+  giveMoney: 80
 --- !u!1001 &1427511003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6143,6 +6268,7 @@ MonoBehaviour:
   propertyName: 14
   purchasePrice: 160
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
@@ -6166,6 +6292,7 @@ MonoBehaviour:
   propertyName: 27
   purchasePrice: 280
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.9740931, b: 0, a: 1}
@@ -6194,6 +6321,7 @@ MonoBehaviour:
   propertyName: 29
   purchasePrice: 150
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0, b: 0, a: 0}
@@ -6332,8 +6460,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1493064716}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+--- !u!1 &1493064715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 1493064714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1493064716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493064715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 2
+  taxAmount: 150
+  giveMoney: 0
 --- !u!1 &1495650924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6654,6 +6805,7 @@ MonoBehaviour:
   propertyName: 22
   purchasePrice: 240
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
@@ -6677,6 +6829,7 @@ MonoBehaviour:
   propertyName: 4
   purchasePrice: 90
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.6037736, g: 0.34063908, b: 0, a: 1}
@@ -6842,6 +6995,7 @@ MonoBehaviour:
   propertyName: 30
   purchasePrice: 340
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0.9740931, b: 0, a: 1}
@@ -7141,6 +7295,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 957374895546494740, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
   m_PrefabInstance: {fileID: 829421288}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1656375168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829421289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 1
+  taxAmount: 0
+  giveMoney: 80
 --- !u!1 &1663211703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
@@ -7161,6 +7330,7 @@ MonoBehaviour:
   propertyName: 26
   purchasePrice: 200
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
@@ -7265,6 +7435,7 @@ MonoBehaviour:
   propertyName: 15
   purchasePrice: 220
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.77088356, g: 0.33813927, b: 0.7735849, a: 1}
@@ -7363,6 +7534,7 @@ MonoBehaviour:
   propertyName: 40
   purchasePrice: 420
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.2917374, b: 0.41509432, a: 1}
@@ -7462,6 +7634,7 @@ MonoBehaviour:
   propertyName: 10
   purchasePrice: 180
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
@@ -7622,6 +7795,7 @@ MonoBehaviour:
   propertyName: 24
   purchasePrice: 240
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
@@ -7782,6 +7956,7 @@ MonoBehaviour:
   propertyName: 25
   purchasePrice: 300
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 1, g: 0, b: 0, a: 1}
@@ -8324,8 +8499,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1995012755}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+--- !u!1 &1995012754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 1995012753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1995012755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995012754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 1
+  taxAmount: 0
+  giveMoney: 80
 --- !u!1 &2014142014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
@@ -8346,6 +8544,7 @@ MonoBehaviour:
   propertyName: 16
   purchasePrice: 200
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.20784314, g: 0.20784314, b: 0.20784314, a: 1}
@@ -8671,8 +8870,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2036019885}
   m_SourcePrefab: {fileID: 100100000, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+--- !u!1 &2036019884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6209580717440633964, guid: 3b00e49e7182f9f46975039ab0642518, type: 3}
+  m_PrefabInstance: {fileID: 2036019883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2036019885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036019884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b093655c796808546970124ceb86c0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Specialcards
+  type: 0
+  taxAmount: 0
+  giveMoney: 60
 --- !u!1 &2036513973
 GameObject:
   m_ObjectHideFlags: 0
@@ -8772,6 +8994,7 @@ MonoBehaviour:
   propertyName: 7
   purchasePrice: 120
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.76415086, g: 0.9792055, b: 1, a: 1}
@@ -9003,6 +9226,7 @@ MonoBehaviour:
   propertyName: 32
   purchasePrice: 320
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0, g: 0.63522005, b: 0, a: 1}
@@ -9083,6 +9307,7 @@ MonoBehaviour:
   propertyName: 2
   purchasePrice: 60
   rentPrice: 0
+  rentWithColorSet: 0
   owned: 0
   typeOfAssetOnProperty: {fileID: 0}
   propertyColor: {r: 0.6037736, g: 0.34063908, b: 0, a: 1}
