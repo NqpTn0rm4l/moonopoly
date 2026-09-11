@@ -21,9 +21,12 @@ public class cellHopping : MonoBehaviour
 
     private int movingPlayer;
 
+    public GameObject cellType;
+
     //New
     [SerializeField] private int goMoney = 200;
     [SerializeField] private int taxCell = 150;
+    [SerializeField] private int superTax = 250;
 
     [SerializeField]
     private float hopDuration = 0.25f;
@@ -60,7 +63,7 @@ public class cellHopping : MonoBehaviour
             Debug.Log("Received $" + goMoney);
         }
 
-        if (newPosition == 39)
+        if (newPosition == 4 || newPosition == 39)
         {
             player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
 
@@ -102,7 +105,75 @@ public class cellHopping : MonoBehaviour
             float percentageComplete = elapsedTime / desiredDurtion;
 
             player[movingPlayer].transform.position = Vector3.Lerp(playerStart, playerEnd, curve.Evaluate(percentageComplete));
+            if (percentageComplete >= 1f)
+            {
+                player[movingPlayer].transform.position = playerEnd;
+
+                LandingAction();
+            }
         }
+    }
+
+    private void LandingAction()
+    {
+        GameObject landedCell = cells[playerDisplacement[movingPlayer]];
+
+        cellType cell = landedCell.GetComponent<cellType>();
+
+        if (cell == null)
+        {
+            Debug.LogWarning("This cell does not have a cellType component.");
+            return;
+        }
+
+        switch (cell.type)
+        {
+
+            case CellType.Chance:
+                DrawChanceCard();
+                break;
+
+            case CellType.CommunityChest:
+                DrawCommunityChestCard();
+                break;
+
+            case CellType.Tax:
+                PayTax(taxCell);
+                break;
+
+            case CellType.SuperTax:
+                PayTax(superTax);
+                break;
+            }
+        }
+
+    private void PayTax(int amount)
+    {
+        player[movingPlayer]
+        .GetComponent<playerStats>()
+        .TaxMoney(amount);
+
+        Debug.Log("Player " + movingPlayer + " paid $" + amount + " tax.");
+    }
+
+    private void DrawChanceCard()
+    {
+        Debug.Log("CHANCE CARD!");
+
+        // Temporary test
+        player[movingPlayer]
+            .GetComponent<playerStats>()
+            .AddMoney(100);
+    }
+
+    private void DrawCommunityChestCard()
+    {
+        Debug.Log("COMMUNITY CHEST CARD!");
+
+        // Temporary test
+        player[movingPlayer]
+            .GetComponent<playerStats>()
+            .AddMoney(50);
     }
 
     public void EndTurn()
