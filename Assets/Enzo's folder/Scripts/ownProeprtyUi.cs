@@ -10,30 +10,54 @@ public class ownProeprtyUi : MonoBehaviour
     [SerializeField] private int propertyCount = 0;
     public bool checkingProperty = false;
 
-    public propertyState propertyStateImported;
 
     public void OwnedPropertyShowsUpAtRoster(propertyState property)
     {
-        propertyStateImported = property;
         if (propertyCount >= UIPositions.Length)
         {
             Debug.Log("No More Space For Property Cards");
             return;
         }
-        GameObject newCard = Instantiate(propertyCard, UIPositions[propertyCount].transform);
+
+        GameObject newCard = Instantiate(
+            propertyCard,
+            UIPositions[propertyCount].transform
+        );
+
         newCard.transform.localPosition = Vector3.zero;
-        Image cardImage = newCard.transform.GetChild(0).GetComponent<Image>();
-        cardImage.color = property.propertyColor;
+
+        Image cardImage =
+            newCard.transform.GetChild(0).GetComponent<Image>();
+
+        if (cardImage != null)
+        {
+            cardImage.color = property.propertyColor;
+        }
+
+        Proeprty propertyButton =
+            newCard.GetComponent<Proeprty>();
+
+        if (propertyButton != null)
+        {
+            propertyButton.Setup(property);
+        }
+        else
+        {
+            Debug.LogWarning(
+                "Property card prefab does not have the Proeprty component."
+            );
+        }
+
         propertyCount++;
     }
-    public void ViewOwnedProperty()
+    public void ViewOwnedProperty(propertyState property)
     {
 
         if (!checkingProperty)
         {
             ownPropertyTemplate.SetActive(true);
             checkingProperty = true;
-            propertyCardStatsReference.SetValues(propertyStateImported);
+            propertyCardStatsReference.SetValues(property);
             Debug.Log("Owned Property Is Being Viewed");
         }
     }

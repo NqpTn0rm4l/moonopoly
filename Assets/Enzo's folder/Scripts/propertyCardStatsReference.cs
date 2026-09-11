@@ -13,7 +13,6 @@ public class propertyCardStatsReference : MonoBehaviour
     [SerializeField] private TMP_Text house4;
     [SerializeField] private TMP_Text hotel;
     [SerializeField] private TMP_Text sellPrice;
-    public propertyState propertyState;
 
     private void Start()
     {

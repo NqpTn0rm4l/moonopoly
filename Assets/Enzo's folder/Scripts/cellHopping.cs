@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class cellHopping : MonoBehaviour
 {
@@ -51,17 +51,12 @@ public class cellHopping : MonoBehaviour
 
     public void MovePlayer(int diceresult)
     {
-        EndTurn();
         int oldPosition = playerDisplacement[playersTurn];
 
         int newPosition = oldPosition + diceresult;
-        /*if (newPosition >= 40)
+        if (newPosition >= cells.Length)
         {
-            player[playersTurn].GetComponent<playerStats>().AddMoney(goMoney);
-            player[playersTurn].GetComponent<playerStats>().TaxMoney(taxCell);
-
-            Debug.Log("Player " + playersTurn + " passed GO!");
-            Debug.Log("Received $" + goMoney);
+            GiveMoneyToCurrentPlayer(goMoney);
         }
 
         playerDisplacement[playersTurn] += diceresult;
@@ -70,58 +65,266 @@ public class cellHopping : MonoBehaviour
         movingPlayer = playersTurn;
 
         playerStart = player[playersTurn].transform.position;
-        playerEnd = cells[playerDisplacement[playersTurn]].transform.position;*/
+        playerEnd = cells[playerDisplacement[playersTurn]].transform.position;
 
-        //elapsedTime = 0f;
-        //desiredDurtion = 0.5f;
+        elapsedTime = 0f;
+        desiredDurtion = 0.5f;
+        isMoving = true;
 
-        //player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
+        player[playersTurn].transform.position = cells[playerDisplacement[playersTurn]].transform.position;
 
         propertyState currentproperty = cells[playerDisplacement[playersTurn]].GetComponent<propertyState>();
         if (currentproperty != null)
         {
             Debug.Log("Checking If Property");
-            if (currentproperty.owned == false)
+
+            if (!currentproperty.owned)
             {
-                Debug.Log("Cecking If Property Is Owned");
-                purchaseProperty.ShowProperty(currentproperty);
-            }
-            else if (currentproperty.owned == true)
-            {
-                Debug.Log("Paying proeprty rent");
-                player[playersTurn].GetComponent<playerStats>().TaxMoney(currentproperty.rentPrice);
+                Botplayerscript bot = player[playersTurn].GetComponent<Botplayerscript>();
+
+                if (bot != null)
+                {
+                    bot.BuyProperty(currentproperty);
+                }
+                else
+                {
+                    purchaseProperty.ShowProperty(currentproperty);
+                }
             }
         }
     }
 
-    /*private void Update()
+    private void Update()
     {
-        if (elapsedTime < desiredDurtion)
+        if (isMoving)
         {
             elapsedTime += Time.deltaTime;
 
-            float percentageComplete = elapsedTime / desiredDurtion;
+            float percentageComplete =
+                elapsedTime / desiredDurtion;
 
-            player[movingPlayer].transform.position = Vector3.Lerp(playerStart, playerEnd, curve.Evaluate(percentageComplete));
+            player[movingPlayer].transform.position =
+                Vector3.Lerp(
+                    playerStart,
+                    playerEnd,
+                    curve.Evaluate(percentageComplete)
+                );
+
+            if (percentageComplete >= 1f)
+            {
+                player[movingPlayer].transform.position =
+                    playerEnd;
+
+                isMoving = false;
+
+                MovementFinished();
+            }
         }
-    }*/
+    }
+    private void MovementFinished()
+    {
+        propertyState currentProperty =
+            cells[playerDisplacement[playersTurn]]
+            .GetComponent<propertyState>();
+
+        if (currentProperty != null && currentProperty.owned)
+        {
+            PayRent(currentProperty);
+        }
+
+        Botplayerscript bot =
+            player[playersTurn]
+            .GetComponent<Botplayerscript>();
+
+        if (bot != null)
+        {
+            AdvanceTurn();
+        }
+    }
 
     public void EndTurn()
     {
+        Botplayerscript bot =
+            player[playersTurn]
+            .GetComponent<Botplayerscript>();
+
+        if (bot != null)
+        {
+            Debug.Log("It is the bot's turn.");
+            return;
+        }
+
+        if (isMoving)
+        {
+            Debug.Log("Player is still moving.");
+            return;
+        }
+
+        AdvanceTurn();
+    }
+
+    public void AdvanceTurn()
+    {
         Debug.Log("Turns Changed");
+
         playersTurn++;
+
         if (playersTurn >= player.Length)
         {
             playersTurn = 0;
         }
-        BotPlayersTurn();
+
+        BotPlayerPlays();
     }
-    private void BotPlayersTurn()
+
+    public void BotPlayerPlays()
     {
-        Botplayerscript bot = player[playersTurn].GetComponent<Botplayerscript>();
+        Botplayerscript bot =
+            player[playersTurn]
+            .GetComponent<Botplayerscript>();
+
         if (bot != null)
         {
             bot.BotTakesItsTurn();
+        }
+    }
+
+    private void GiveMoneyToCurrentPlayer(int amount)
+    {
+        Botplayerstats botStats =
+            player[playersTurn]
+            .GetComponent<Botplayerstats>();
+
+        if (botStats != null)
+        {
+            botStats.AddMoney(amount);
+            return;
+        }
+
+        playerStats playerStats =
+            player[playersTurn]
+            .GetComponent<playerStats>();
+
+        if (playerStats != null)
+        {
+            playerStats.AddMoney(amount);
+        }
+    }
+
+    public bool IsMoving()
+    {
+        return isMoving;
+    }
+    private void PayRent(propertyState property)
+    {
+        if (!property.owned)
+        {
+            return;
+        }
+
+        // Who landed on the property?
+        playerStats currentHuman =
+            player[playersTurn].GetComponent<playerStats>();
+
+        Botplayerstats currentBot =
+            player[playersTurn].GetComponent<Botplayerstats>();
+
+
+        // ==========================================
+        // PROPERTY OWNED BY HUMAN
+        // ==========================================
+
+        if (property.owner != null)
+        {
+            // Human landed on their own property
+            if (currentHuman != null &&
+                property.owner == currentHuman)
+            {
+                Debug.Log("Landed on own property.");
+                return;
+            }
+
+            // Human landed on another human's property
+            if (currentHuman != null)
+            {
+                currentHuman.TaxMoney(property.rentPrice);
+                property.owner.AddMoney(property.rentPrice);
+
+                Debug.Log(
+                    currentHuman.gameObject.name +
+                    " paid $" +
+                    property.rentPrice +
+                    " rent to " +
+                    property.owner.gameObject.name
+                );
+
+                return;
+            }
+
+            // Bot landed on a human's property
+            if (currentBot != null)
+            {
+                currentBot.TaxMoney(property.rentPrice);
+                property.owner.AddMoney(property.rentPrice);
+
+                Debug.Log(
+                    currentBot.gameObject.name +
+                    " paid $" +
+                    property.rentPrice +
+                    " rent to " +
+                    property.owner.gameObject.name
+                );
+
+                return;
+            }
+        }
+
+
+        // ==========================================
+        // PROPERTY OWNED BY BOT
+        // ==========================================
+
+        if (property.ownerBot != null)
+        {
+            // Bot landed on its own property
+            if (currentBot != null &&
+                property.ownerBot == currentBot)
+            {
+                Debug.Log("Landed on own property.");
+                return;
+            }
+
+            // Human landed on bot's property
+            if (currentHuman != null)
+            {
+                currentHuman.TaxMoney(property.rentPrice);
+                property.ownerBot.AddMoney(property.rentPrice);
+
+                Debug.Log(
+                    currentHuman.gameObject.name +
+                    " paid $" +
+                    property.rentPrice +
+                    " rent to " +
+                    property.ownerBot.gameObject.name
+                );
+
+                return;
+            }
+
+            // Bot landed on another bot's property
+            if (currentBot != null)
+            {
+                currentBot.TaxMoney(property.rentPrice);
+                property.ownerBot.AddMoney(property.rentPrice);
+
+                Debug.Log(
+                    currentBot.gameObject.name +
+                    " paid $" +
+                    property.rentPrice +
+                    " rent to " +
+                    property.ownerBot.gameObject.name
+                );
+            }
         }
     }
 }

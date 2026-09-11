@@ -224,6 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6247218108753723461}
   - component: {fileID: 5494650662413335018}
+  - component: {fileID: 6894406277059032970}
   m_Layer: 5
   m_Name: Property card prefab variant 3
   m_TagString: Untagged
@@ -266,6 +267,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ownUIFixTest
   OwnPropertyUi: {fileID: 0}
   parrallelOwnPropertyTemplate: {fileID: 0}
+--- !u!114 &6894406277059032970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6006157016372191023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 205fbf1e47bbec54a91a965f1246ee30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Proeprty
 --- !u!1 &6755175745281685968
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,9 +400,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5494650662413335018}
-        m_TargetAssemblyTypeName: ownUIFixTest, Assembly-CSharp
-        m_MethodName: ViewOwnedProperty
+      - m_Target: {fileID: 6894406277059032970}
+        m_TargetAssemblyTypeName: Proeprty, Assembly-CSharp
+        m_MethodName: ViewProperty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
