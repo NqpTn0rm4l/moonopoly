@@ -7,6 +7,8 @@ public class propertyState : MonoBehaviour
     public int rentPrice;
     public int rentWithColorSet;
     public bool owned = false;
+    public playerStats owner;
+    public Botplayerstats ownerBot;
     public GameObject typeOfAssetOnProperty;
     public Color propertyColor;
 }

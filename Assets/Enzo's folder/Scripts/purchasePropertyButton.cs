@@ -10,14 +10,6 @@ public class purchasePropertyButton : MonoBehaviour
     [SerializeField] private ownProeprtyUi ownPropertyUiScript;
 
     public propertyState currentProperty;
-    /*public void TurnOnUI()
-    {
-        propertyNameUI.SetActive(true);
-    }
-    public void PrintPropertyName()
-    {
-        propertyNameUI.(getpropertyname);
-    }*/
 
     public void ShowProperty(propertyState property)
     {
@@ -30,10 +22,9 @@ public class purchasePropertyButton : MonoBehaviour
     public void AnswerYes()
     {
         Debug.Log("Purchase Process");
-        if (playerStats.SubtractPropertyPriceFromPlayerAmount(currentProperty.purchasePrice))
+        if (playerStats.BuyPropertyAndSetOwner(currentProperty))
         {
             Debug.Log("Purchase Done");
-            currentProperty.owned = true;
             ownPropertyUiScript.OwnedPropertyShowsUpAtRoster(currentProperty);
             propertyUI.SetActive(false);
         }

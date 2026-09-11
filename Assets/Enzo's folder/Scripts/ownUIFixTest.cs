@@ -9,10 +9,6 @@ public class ownUIFixTest : MonoBehaviour
     {
         OwnPropertyUi = FindAnyObjectByType<ownProeprtyUi>();
     }
-    public void ViewOwnedProperty()
-    {
-        OwnPropertyUi.ViewOwnedProperty();
-    }
     public void HideOwnProperty()
     {
         OwnPropertyUi.HideOwnProperty();
