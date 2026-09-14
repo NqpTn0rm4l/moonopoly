@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Nachoz/Scenes/StartGame.unity
     guid: a76ce9fbf09ef584f8239f779daebd84
   - enabled: 1
-    path: Assets/Nachoz/Scenes/Dup 2.unity
-    guid: 55dbc0d4147b94c4e92ea56fba335c19
+    path: Assets/Enzo's folder/Main scene.unity
+    guid: 6df61fa53f8760941a9f7f13ef2a55c9
   - enabled: 1
     path: Assets/Nachoz/Scenes/Credit.unity
     guid: 3e64639d529661f44b6ab2813554d83e
