@@ -16,7 +16,7 @@ public class cellHopping : MonoBehaviour
     private AnimationCurve curve;
 
     private Vector3 playerEnd;
-    private Vector3 playerStart = new Vector3(0, 0, 0);
+    private Vector3 playerStart = new Vector3 (0, 0,0);
     private float desiredDurtion = 3f;
     private float elapsedTime;
 
@@ -25,7 +25,6 @@ public class cellHopping : MonoBehaviour
     //New
     [SerializeField] private int goMoney = 200;
     [SerializeField] private int taxCell = 150;
-    [SerializeField] private int superTax = 250;
 
     [SerializeField]
     private float hopDuration = 0.25f;
@@ -57,10 +56,7 @@ public class cellHopping : MonoBehaviour
         int newPosition = oldPosition + diceresult;
         if (newPosition >= cells.Length)
         {
-            player[playersTurn].GetComponent<playerStats>().AddMoney(goMoney);
-
-            Debug.Log("Player " + playersTurn + " passed GO!");
-            Debug.Log("Received $" + goMoney);
+            GiveMoneyToCurrentPlayer(goMoney);
         }
 
         playerDisplacement[playersTurn] += diceresult;
@@ -102,28 +98,19 @@ public class cellHopping : MonoBehaviour
     {
         if (isMoving)
         {
-            if (elapsedTime < desiredDurtion)
-            {
-                elapsedTime += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
 
-                float percentageComplete = elapsedTime / desiredDurtion;
+            float percentageComplete =
+                elapsedTime / desiredDurtion;
 
-                player[movingPlayer].transform.position =
-                    Vector3.Lerp(
-                        playerStart,
-                        playerEnd,
-                        curve.Evaluate(percentageComplete)
-                    );
+            player[movingPlayer].transform.position =
+                Vector3.Lerp(
+                    playerStart,
+                    playerEnd,
+                    curve.Evaluate(percentageComplete)
+                );
 
-                if (percentageComplete >= 1f)
-                {
-                    player[movingPlayer].transform.position = playerEnd;
-
-                    LandingAction();
-                }
-            }
-
-            /*if (percentageComplete >= 1f)
+            if (percentageComplete >= 1f)
             {
                 player[movingPlayer].transform.position =
                     playerEnd;
@@ -131,71 +118,9 @@ public class cellHopping : MonoBehaviour
                 isMoving = false;
 
                 MovementFinished();
-            }*/
+            }
         }
     }
-
-    private void LandingAction()
-    {
-        GameObject landedCell = cells[playerDisplacement[movingPlayer]];
-
-        Specialcards cell = landedCell.GetComponent<Specialcards>();
-
-        if (cell == null)
-        {
-            Debug.LogWarning("This cell does not have a cellType component.");
-            return;
-        }
-
-        switch (cell.type)
-        {
-            case CellType.Chance:
-                DrawChanceCard();
-                break;
-
-            case CellType.CommunityChest:
-                DrawCommunityChestCard();
-                break;
-
-            case CellType.Tax:
-                PayTax(taxCell);
-                break;
-
-            case CellType.SuperTax:
-                PayTax(superTax);
-                break;
-        }
-    }
-
-    private void PayTax(int amount)
-    {
-        player[movingPlayer]
-            .GetComponent<playerStats>()
-            .TaxMoney(amount);
-
-        Debug.Log("Player " + movingPlayer + " paid $" + amount + " tax.");
-    }
-
-    private void DrawChanceCard()
-    {
-        Debug.Log("CHANCE CARD!");
-
-        // Temporary test
-        player[movingPlayer]
-            .GetComponent<playerStats>()
-            .AddMoney(60);
-    }
-
-    private void DrawCommunityChestCard()
-    {
-        Debug.Log("COMMUNITY CHEST CARD!");
-
-        // Temporary test
-        player[movingPlayer]
-            .GetComponent<playerStats>()
-            .AddMoney(80);
-    }
-
     private void MovementFinished()
     {
         propertyState currentProperty =
